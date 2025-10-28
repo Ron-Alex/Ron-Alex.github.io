@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+@media (max-width: 640px) {
+  @import "tailwindcss/sm";
+}
+@media (prefers-color-scheme: dark) {
+  @import "tailwindcss/dark-mode";
+}
