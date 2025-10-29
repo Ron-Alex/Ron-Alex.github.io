@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { ChevronsDown } from '@lucide/astro';
 ---
 
 <div id="mainContainer" class="dark:bg-black dark:text-white min-h-screen flex flex-col">
@@ -11,12 +12,16 @@ import '../styles/global.css';
             </div>
             <div id="heroInfo">
                 <div id="heroLocation">
-                    <p>Location</p>
+                    <h3>Location</h3>
                     <p>Houston</p>
                 </div>
                 <div id="heroStatus">
-                    <p>Status</p>
+                    <h3>Status</h3>
                     <p>Student</p>
+                </div>
+                <div id="readMore">
+                    <h3>Read More</h3>
+                    <ChevronsDown size="24" />
                 </div>
             </div>
         </div>
@@ -25,8 +30,7 @@ import '../styles/global.css';
 
 <style>
 
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto+Slab:wght@100..900&display=swap');
     main {
         flex: 1;
         height: 100%;
@@ -51,8 +55,22 @@ import '../styles/global.css';
     }
 
     #heroInfo{
+        font-family: "Bitcount Grid Single", system-ui;
+        font-optical-sizing: auto;
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto auto 1fr;
+    }
+
+    #readMore{
+        display: inline flex; 
+        place-self: end;
+        align-items: center;
+    }
+
+    #heroInfo h3{
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
     }
 
 </style>
