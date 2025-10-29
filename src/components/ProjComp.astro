@@ -1,0 +1,49 @@
+---
+interface Props {
+    title: string;
+    stack: string[];
+    img: string;
+}
+
+const {title} = Astro.props;
+const {stack} = Astro.props;
+const {img} = Astro.props;
+
+---
+
+<div id="indivProj" class="dark:bg-black dark:text-white flex flex-row p-8 border border-solid border-white rounded-lg">
+    <div id="projContent1" class=" gap-4">
+        <div id="indivProjTitle">
+            <h2 class="text-3xl font-semibold ">{title}</h2>
+        </div>
+        <div id="projStack">
+            <h3 class="text-xl font-medium mb-2">Tech Stack</h3>
+            <ul class="list-disc list-inside">
+                {stack.map(tech => (
+                    <li>{tech}</li>
+                ))}
+            </ul>
+        </div>
+    </div>
+    <div id="projImage" class="mt-4 object-right max-w-md ml-8">
+        <img src={img} alt={`${title} screenshot`} class="w-full h-auto rounded-lg shadow-md border border-solid border-white" />
+</div>
+
+<style>
+    #indivProj {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* left: text, right: image */
+    align-items: start;
+    gap: 1.5rem;
+    font-family: "Karla", system-ui;
+    font-optical-sizing: auto;
+}
+
+    #projImage img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+
+</style>
