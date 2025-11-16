@@ -52,4 +52,4 @@ This "push-to-deploy" system is incredibly efficient and lets me focus on writin
 
 Building this portfolio was a fantastic learning experience. It solidified my understanding of static-site generation, the power of type safety, and the convenience of a good CI/CD pipeline. Astro has quickly become one of my favorite tools for building content-heavy websites.
 
-Thanks for reading! Feel free to [check out the source code on GitHub](YOUR_GITHUB_REPO_LINK_HERE).
+Thanks for reading! Feel free to [check out the source code on GitHub](https://github.com/Ron-Alex/Ron-Alex.github.io).

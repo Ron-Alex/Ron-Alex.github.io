@@ -10,22 +10,32 @@ import { ChevronsDown } from '@lucide/astro';
                 <h1>My name is Ron Alex,</h1>
                 <h2>and I'm a Software Engineer</h2>
             </div>
-            <div id="heroInfo">
-                <div id="heroLocation">
-                    <h3>Location</h3>
-                    <p>Houston</p>
-                </div>
-                <div id="heroStatus">
-                    <h3>Status</h3>
-                    <p>Student</p>
-                </div>
-                <div id="readMore">
-                    <h3>Read More</h3>
-                    <ChevronsDown size="24" />
-                </div>
-            </div>
         </div>
     </main>
+    <div id="heroInfo" class="grid grid-cols-3 gap-8 p-8">
+        <div id="heroLocation">
+            <h3>Location</h3>
+            <p>Houston</p>
+        </div>
+        <div id="heroStatus">
+            <h3>Status</h3>
+            <p>Student</p>
+        </div>
+        <div id="linkedin">
+            <a href="https://www.linkedin.com/in/ron-alex/" target="_blank" rel="noopener noreferrer">
+                <h3>LinkedIn</h3>
+            </a>
+        </div>
+        <div id="github">
+            <a href="https://github.com/ron-alex" target="_blank" rel="noopener noreferrer">
+                <h3>GitHub</h3>
+            </a>
+        </div>
+        <div id="readMore">
+            <h3>Read More</h3>
+            <ChevronsDown size="24" />
+        </div>
+    </div>
 </div>
 
 <style>
@@ -58,7 +68,12 @@ import { ChevronsDown } from '@lucide/astro';
         font-family: "Bitcount Grid Single", system-ui;
         font-optical-sizing: auto;
         display: grid;
-        grid-template-columns: auto auto 1fr;
+        grid-template-columns: auto auto auto auto 1fr;
+    }
+
+    #linkedin, #github{
+        display: inline flex;
+        align-items: center;
     }
 
     #readMore{
