@@ -15,14 +15,14 @@ const {projDescription} = Astro.props;
 
 ---
 
-<div id="indivProj" class="dark:bg-black dark:text-white flex flex-row p-8 border border-solid border-white rounded-lg">
+<div id="indivProj" class="dark:text-white flex flex-row p-8 border border-solid border-white rounded-lg">
     <div id="projContent1" class="gap-4">
         <div id="indivProjTitle">
             <h2 class="text-lg lg:text-3xl font-semibold">{title}</h2>
         </div>
         <div>
             <h3 class="text-xl font-medium mb-2">{projDescription}</h3>
-        </div>
+        </div>  
         <div id="projStack">
             <h3 class="text-xl font-medium mb-2">Tech Stack</h3>
             <ul class="list-disc list-inside">
@@ -43,6 +43,7 @@ const {projDescription} = Astro.props;
 <style>
     #indivProj {
     display: grid;
+    background-color: #171717;
     grid-template-columns: 1.5fr 3fr 0.5fr; /* left: text, right: image */
     align-items: start;
     gap: 1.5rem;

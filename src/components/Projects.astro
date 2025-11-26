@@ -3,7 +3,7 @@ import ProjComp from '../components/ProjComp.astro'
 
 ---
 
-<div id="projectSection" class="dark:bg-black dark:text-white min-h-screen flex flex-col p-8">
+<div id="projectSection" class="dark:text-white min-h-screen flex flex-col p-8">
     <div id="projectTitle">
         <h2 class="text-3xl font-semibold mb-4">Projects</h2>
     </div>
@@ -17,7 +17,12 @@ import ProjComp from '../components/ProjComp.astro'
         </a>
         <a href='/projects/coogmusic/'>
             <div>
-                <ProjComp title="CoogMusic" stack={['React', 'TypeScript', 'Express', 'PostgreSQL']} img="/assets/coogmusic/coogmusic.png" date='November 2025'/>
+                <ProjComp title="CoogMusic" projDescription='Full stack music streaming application' stack={['React', 'TypeScript', 'Express', 'PostgreSQL']} img="/assets/coogmusic/coogmusic.png" date='November 2025'/>
+            </div>
+        </a>
+        <a href='/projects/videoindex/'>
+            <div>
+                <ProjComp title="VideoIndex" projDescription='Semantic search engine for video content' stack={['FAISS', 'ResNet-50', 'PyTorch', 'JavaScript']} img="/assets/videoindex/videoindex.png" date='November 2025'/>
             </div>
         </a>
     </div>

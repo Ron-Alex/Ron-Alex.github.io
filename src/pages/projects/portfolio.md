@@ -5,29 +5,25 @@ description: 'A deep dive into how I built this personal portfolio using Astro, 
 publishDate: 'Oct 30, 2025' 
 ---
 
-## Project: This Portfolio
+# Project: This Portfolio
 
 Welcome to the most "meta" project on my site! This post is all about the very portfolio you're looking at right now. My goal was to build a fast, modern, and content-focused website to showcase my projects and share my thoughts.
 
 After exploring different options, I landed on a powerful combination of technologies: **Astro**, **TypeScript**, and **GitHub Actions**.
 
+![GitHub Actions Image](../../../public/assets/portfolio/githubactions.png)
+*GitHub Actions Workflow history*
 
 
 ---
 
 ### Why Astro? 🚀
 
-The biggest decision for this project was the framework. I chose [Astro](https://astro.build/) for a few key reasons:
+The biggest decision for this project was the framework. I chose [Astro](https://astro.build/) for a few key reasons:   
 
 * **Performance First:** Astro is a static-site generator that ships **zero JavaScript by default**. This means my site loads incredibly fast, scoring top marks on performance metrics and providing a great user experience.
 * **Astro Islands:** This is Astro's "secret sauce." It allows me to create interactive UI components (like a mobile menu or a theme toggle) that load their own JavaScript *only when needed*, without slowing down the rest of the page. This keeps the site snappy while still allowing for rich interactivity.
 * **Content-Driven:** Astro is built for content. Its file-based routing and first-class support for Markdown (like this very post!) make it a perfect fit for a blog or portfolio. It was incredibly easy to set up my project layouts and pages.
-
-### Adding Type Safety with TypeScript
-
-To make the project more robust and maintainable, I used **TypeScript** from the start.
-
-While it adds a bit of extra code, the benefits are huge. Defining explicit types for my component props (e.g., `interface Props { ... }`) and utility functions saved me from countless runtime errors. It makes refactoring a breeze and provides fantastic autocompletion in VS Code, which dramatically speeds up development.
 
 
 
