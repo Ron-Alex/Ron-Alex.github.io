@@ -4,155 +4,36 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="/src/components/mdstyles.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Ron Alex</title>
 	</head>
 	<body>
 		<article class="markdown-card">
-			<slot />
+			<div class="markdown-body">
+				<slot />
+			</div>
 		</article>
 	</body>
 </html>
 
 <style>
-	html,
-	body {
-		background-color: black;
-		color: white;
-        min-width: 320px;
-		max-width: 1440px;
-		justify-content: center;
-	}
+    body {
+        background-color: #121212;
+    }
 
-	/* Markdown Card Styling */
-	.markdown-card {
-	max-width: 800px;
-	margin: 2rem auto;
-	background-color: black;
-	color: white;
-	border-radius: 1rem;
-	padding: 2rem;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-	line-height: 1.75;
-	}
+    .markdown-card {
+        max-width: 50vw;
+        margin: 2rem auto;
+        padding: 2rem;
+    }
 
-	/* Headings */
-	.markdown-card h1 {
-	font-size: 2rem;
-	font-weight: 700;
-	margin-top: 1.5rem;
-	margin-bottom: 1rem;
-	}
-
-	.markdown-card h2 {
-	font-size: 1.5rem;
-	font-weight: 600;
-	margin-top: 2rem;
-	margin-bottom: 1rem;
-	border-bottom: 2px solid #e5e7eb;
-	padding-bottom: 0.25rem;
-	}
-
-	.markdown-card h3 {
-	font-size: 1.25rem;
-	font-weight: 600;
-	margin-top: 1.5rem;
-	margin-bottom: 0.75rem;
-	}
-
-	.markdown-card h4 {
-	font-size: 1.125rem;
-	font-weight: 600;
-	margin-top: 1.25rem;
-	margin-bottom: 0.5rem;
-	}
-
-	/* Paragraphs */
-	.markdown-card p {
-	margin-bottom: 1rem;
-	}
-
-	/* Lists */
-	.markdown-card ul,
-	.markdown-card ol {
-	margin: 1rem 0 1rem 1.5rem;
-	}
-
-	.markdown-card li {
-	margin-bottom: 0.5rem;
-	}
-
-	/* Links */
-	.markdown-card a {
-	color: #2563eb;
-	text-decoration: underline;
-	transition: color 0.2s ease;
-	}
-
-	.markdown-card a:hover {
-	color: #1d4ed8;
-	}
-
-	/* Code blocks */
-	.markdown-card code {
-	background-color: #f3f4f6;
-	color: #111827;
-	padding: 0.2rem 0.4rem;
-	border-radius: 0.25rem;
-	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	font-size: 0.9em;
-	}
-
-	.markdown-card pre {
-	background-color: #f9fafb;
-	padding: 1rem;
-	border-radius: 0.5rem;
-	overflow-x: auto;
-	margin: 1rem 0;
-	}
-
-	/* Horizontal rule */
-	.markdown-card hr {
-	border: none;
-	border-top: 1px solid #e5e7eb;
-	margin: 2rem 0;
-	}
-
-	/* Blockquote */
-	.markdown-card blockquote {
-	border-left: 4px solid #d1d5db;
-	background-color: #f9fafb;
-	padding: 0.75rem 1rem;
-	margin: 1.5rem 0;
-	font-style: italic;
-	color: #374151;
-	}
-
-	/* Images */
-	.markdown-card img {
-	max-width: 100%;
-	border-radius: 0.5rem;
-	margin: 1rem 0;
-	}
-
-	/* Tables */
-	.markdown-card table {
-	width: 100%;
-	border-collapse: collapse;
-	margin: 1rem 0;
-	}
-
-	.markdown-card th,
-	.markdown-card td {
-	border: 1px solid #e5e7eb;
-	padding: 0.5rem 0.75rem;
-	text-align: left;
-	}
-
-	.markdown-card th {
-	background-color: #f3f4f6;
-	font-weight: 600;
-	}
+    @media (max-width: 650px) {
+        .markdown-card {
+            max-width: none;
+            margin: 1rem;
+            padding: 1rem;
+        }
+    }
 
 </style>
