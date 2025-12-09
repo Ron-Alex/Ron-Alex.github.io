@@ -10,9 +10,16 @@ import ProjComp from '../components/ProjComp.astro'
 
     <div id="projectsList" class="grid grid-cols-1 gap-6">
         <h2 class="italic font-light">UNDER CONSTRUCTION</h2>
+
         <a href='/projects/portfolio/'>
             <div>
                  <ProjComp title="Portfolio Website" projDescription='Portfolio Project' stack={['Astro', 'Tailwind CSS', 'GitHub Actions']} img="/assets/portfolio/portfolio.webp" date='Ongoing'/>
+            </div>
+        </a>
+
+        <a href='public/assets/papers/adv ml/COSC4371_Alex_Ron_FinalReport.pdf' target="_blank">
+            <div>
+                 <ProjComp title="Machine Learning Research" projDescription='Research paper on Adversarial Machine Learning' stack={['Python', 'TextAttack']} img="public/assets/papers/adv ml/adv_ml_paper.webp" date='December 2025'/>
             </div>
         </a>
         <a href='/projects/coogmusic/'>
