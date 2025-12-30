@@ -18,13 +18,13 @@ const {projDescription} = Astro.props;
 <div id="indivProj" class="dark:text-white flex flex-row p-8 border border-solid border-white rounded-lg">
     <div id="projContent1" class="gap-4">
         <div id="indivProjTitle">
-            <h2 class="text-lg lg:text-3xl font-semibold">{title}</h2>
+            <h2 class="text-lg lg:text-3xl font-semibold mb-2">{title}</h2>
         </div>
         <div>
-            <h3 class="text-xl font-medium mb-2">{projDescription}</h3>
+            <h3 class="text-xl font-medium mb-2 text-gray-500">{projDescription}</h3>
         </div>  
         <div id="projStack">
-            <h3 class="text-xl font-medium mb-2">Tech Stack</h3>
+            <!-- <h3 class="text-xl font-medium mb-2">Tech Stack</h3> -->
             <ul class="list-disc list-inside">
                 {stack.map(tech => (
                     <li>{tech}</li>
@@ -36,7 +36,7 @@ const {projDescription} = Astro.props;
         <img src={img} alt={`${title} screenshot`} class=" border rounded-lg"/>
     </div>
     <div>
-        <h2 class="text-lg text-gray-500 italic">{date}</h2>
+        <h2 class="text-lg text-wheat italic">{date}</h2>
     </div>
 </div>
 
@@ -47,9 +47,9 @@ const {projDescription} = Astro.props;
     grid-template-columns: 1.5fr 3fr 0.5fr; /* left: text, right: image */
     align-items: start;
     gap: 1.5rem;
-    font-family: "Karla", system-ui;
+    font-family: "DM Sans", system-ui;
     font-optical-sizing: auto;
-}
+}   
 
     #projImage img {
         max-width: 100%;
@@ -67,9 +67,32 @@ const {projDescription} = Astro.props;
 
     /* Apply on card hover — skew to simulate italic plus set font-style for accuracy */
     #indivProj:hover #indivProjTitle h2 {
-        transform: skewX(-15deg);
+        transform: skewX(-10deg);
         font-style: italic;
         color: #60a5fa; /* accent color when hovered — adjust if you prefer */
+    }
+
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 10px 0px;
+    }
+
+    li{
+        width: fit-content;
+        list-style-type: none;
+        border: 1px solid white;
+        border-radius: 0.5rem;
+        padding: 4px;
+    }
+
+    @media screen and (max-width: 768px) {
+        #indivProj {
+            display: grid;
+            grid-template-rows: auto auto auto;
+            grid-template-columns: auto;
+        }
     }
 
 </style>
