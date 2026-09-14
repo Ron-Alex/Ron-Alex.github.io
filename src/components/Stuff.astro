@@ -1,0 +1,174 @@
+---
+import ProjComp from '../components/ProjComp.astro'
+
+---
+
+<div
+    id="stuffSection"
+    class="dark:text-white min-h-screen flex flex-col p-8"
+>
+    <div id="stuffTitle">
+        <h2 class="text-3xl font-semibold mb-4">My Stuff</h2>
+    </div>
+
+    <div
+        x-data="{
+            categories: [],
+            toggleCategory(category) {
+                this.categories.includes(category)
+                    ? this.categories = this.categories.filter(c => c !== category)
+                    : this.categories.push(category)
+            }
+        }"
+    >
+
+    <div id="stuffCategories">
+
+        <button 
+        class="categoryButton" 
+        @click="toggleCategory('Project')"
+        :class="{ 'bg-white text-black': categories.includes('Project') }"
+        >Projects</button>
+
+        <button 
+        class="categoryButton" 
+        @click="toggleCategory('Experience')"
+        :class="{ 'bg-white text-black': categories.includes('Experience') }"
+        >Experience</button>
+
+        <button 
+        class="categoryButton" 
+        @click="toggleCategory('Research')"
+        :class="{ 'bg-white text-black': categories.includes('Research') }"
+        >Research</button>
+
+        <button 
+        class="categoryButton" 
+        @click="toggleCategory('Certification')"
+        :class="{ 'bg-white text-black': categories.includes('Certification') }"
+        >Certification</button>
+    </div>
+
+
+    <div id="projectsList" class="grid grid-cols-1 gap-6">
+
+        <!-- Portfolio - Project -->
+        <a
+            href="/projects/portfolio/"
+            x-show="categories.length === 0 || categories.includes('Project')"
+        >
+            <ProjComp
+                title="Portfolio Website"
+                projDescription=""
+                stack={['Astro', 'Tailwind CSS', 'GitHub Actions']}
+                category="Project"
+                img="/assets/portfolio/portfolio.webp"
+                date="Ongoing"
+            />
+        </a>
+
+        <!-- Halliburton - Experience -->
+        <a
+            href="/experience/halliburton/"
+            x-show="categories.length === 0 || categories.includes('Experience')"
+        >
+            <ProjComp
+                title="Halliburton"
+                projDescription="Software Engineer Intern"
+                stack={['React', 'TypeScript', '.NET']}
+                category="Experience"
+                img="/assets/halliburton/halliburton_logo.webp"
+                date="May 2026 - August 2026    "
+            />
+        </a>
+
+        <!-- AWS - Certification -->
+        <a
+            href="https://www.credly.com/badges/39a49ff8-ffe7-4d88-9359-112d245157ae"
+            x-show="categories.length === 0 || categories.includes('Certification')"
+        >
+            <ProjComp
+                title="AWS CSA"
+                projDescription="Amazon Web Services - Certified Solutions Architect - Assoicate"
+                stack={['AWS']}
+                category="Certification"
+                img="/assets/certifications/aws_csa/aws_csa_logo.webp"
+                date="March 2026"
+            />
+        </a>
+
+        <!-- ML Research - Research -->
+        <a
+            href="assets/papers/adv ml/COSC4371_Alex_Ron_FinalReport.pdf"
+            target="_blank"
+            x-show="categories.length === 0 || categories.includes('Research')"
+        >
+            <ProjComp
+                title="Machine Learning Research"
+                projDescription="Research paper on Adversarial Machine Learning"
+                stack={['Python', 'TextAttack']}
+                category="Research"
+                img="assets/papers/adv ml/adv_ml_paper.webp"
+                date="December 2025"
+            />
+        </a>
+
+        <!-- CoogMusic - Project -->
+        <a
+            href="/projects/coogmusic/"
+            x-show="categories.length === 0 || categories.includes('Project')"
+        >
+            <ProjComp
+                title="CoogMusic"
+                projDescription="Full stack music streaming application"
+                stack={['React', 'TypeScript', 'Express', 'PostgreSQL']}
+                category="Project"
+                img="/assets/coogmusic/coogmusic.webp"
+                date="December 2025"
+            />
+        </a>
+
+        <!-- videoIndex - Project -->
+        <a
+            href="/projects/videoindex/"
+            x-show="categories.length === 0 || categories.includes('Project')"
+        >
+            <ProjComp
+                title="VideoIndex"
+                projDescription="Semantic search engine for video content"
+                stack={['FAISS', 'ResNet-50', 'PyTorch', 'JavaScript']}
+                category="Project"
+                img="/assets/videoindex/videoindex.webp"
+                date="November 2025"
+            />
+        </a>
+
+    </div>
+</div>
+
+<style>
+    #stuffCategories {
+        margin: 0 0 1rem 0;
+        font-family: "DM Sans", system-ui;
+    }
+
+    .categoryButton {
+        font-size: larger;
+        width: fit-content;
+        border: 1px solid white;
+        border-radius: 0.5rem;
+        padding: 4px;
+        margin-right: 1rem;
+    }
+
+    .categoryButton:hover{
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+        .categoryButton {
+            margin-bottom: 1rem;
+        }
+    }
+
+</style>
