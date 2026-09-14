@@ -5,31 +5,35 @@ interface Props {
     img: string;
     date?: string;
     projDescription?: string;
+    category: string;
 }
 
-const {title} = Astro.props;
-const {stack} = Astro.props;
-const {img} = Astro.props;
-const {date} = Astro.props;
-const {projDescription} = Astro.props;
+const {title, stack, img, date, projDescription, category} = Astro.props;
 
 ---
 
 <div id="indivProj" class="dark:text-white flex flex-row p-8 border border-solid border-white rounded-lg">
     <div id="projContent1" class="gap-4">
-        <div id="indivProjTitle">
-            <h2 class="text-lg lg:text-3xl font-semibold mb-2">{title}</h2>
+        <div id="projContentTop">
+            <div id="indivProjTitle">
+                <h2 class="text-lg lg:text-3xl font-semibold mb-2">{title}</h2>
+            </div>
+            <div>
+                <h3 class="text-xl font-medium mb-2 text-gray-500">{projDescription}</h3>
+            </div>  
+            <div id="projStack">
+                <!-- <h3 class="text-xl font-medium mb-2">Tech Stack</h3> -->
+                <ul class="list-disc list-inside">
+                    {stack.map(tech => (
+                        <li>{tech}</li>
+                    ))}
+                </ul>
+            </div>
         </div>
-        <div>
-            <h3 class="text-xl font-medium mb-2 text-gray-500">{projDescription}</h3>
-        </div>  
-        <div id="projStack">
-            <!-- <h3 class="text-xl font-medium mb-2">Tech Stack</h3> -->
-            <ul class="list-disc list-inside">
-                {stack.map(tech => (
-                    <li>{tech}</li>
-                ))}
-            </ul>
+        <div id="projContentBottom">
+            <div>
+                <h2 class="text-lg font-medium" id="categoryTag">{category}</h2>
+            </div>
         </div>
     </div>
     <div id="projImage" class="rounded-lg border border-solid border-white">
@@ -49,11 +53,32 @@ const {projDescription} = Astro.props;
     gap: 1.5rem;
     font-family: "DM Sans", system-ui;
     font-optical-sizing: auto;
-}   
+    }   
 
     #projImage img {
         max-width: 100%;
         height: auto;
+    }
+
+    #categoryTag{
+        width: fit-content;
+        list-style-type: none;
+        border: 1px solid white;
+        border-radius: 0.5rem;
+        padding: 4px 8px;
+        background-color: white;
+        color: #171717;
+        font-style: italic;
+    }   
+
+    #projContent1 {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #projContentBottom{
+        margin-top: auto;
     }
 
     /* Title hover: smoothly italicize via transform (font-style isn't animatable) */   
